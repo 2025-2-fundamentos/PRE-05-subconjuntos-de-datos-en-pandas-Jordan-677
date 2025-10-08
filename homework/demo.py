@@ -7,9 +7,7 @@ pd.set_option("display.notebook_repr_html", True)
 
 
 # Carga del archivo desde un repo en GitHub
-truck_events = pd.read_csv(
-    r"C:\Users\Jordan\Documents\GitHub\PRE-05-subconjuntos-de-datos-en-pandas-Jordan-677\files\input\truck_event_text_partition.csv"
-)
+truck_events = pd.read_csv("files/input/truck_event_text_partition.csv")
 
 # Cabecera del archivo
 truck_events.head()
@@ -63,11 +61,11 @@ truck_events.iloc[1].eventKey
 # Escritura de la tabla en el disco
 import os
 
-if not os.path.exists("../files/output/"):
-    os.makedirs("../files/output/")
+if not os.path.exists("files/output/"):
+    os.makedirs("files/output/")
 
 specific_columns.to_csv(
-    "../files/output/specific-columns.csv",
+    "files/output/specific-columns.csv",
     sep=",",
     header=True,
     index=True,
